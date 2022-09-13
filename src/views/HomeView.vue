@@ -1,28 +1,31 @@
 <script setup lang="ts">
-const arr = ["Hi! I'm Jasiu"];
-const arr1 = ['front-end'];
-const arr2 = ['developer'];
+const firstLine: string[] = ["Hi! I'm Jasiu"];
+const secondLine: string[] = ["front-end"];
+const thirdLine: string[] = ["developer"];
 </script>
 
 <template>
   <main>
-    <p class="start">&lth1&gt</p>
+    <p class="startH1">&lt;h1&gt;</p>
     <VueWriter
-      class="mainText"
-      :array="arr"
+      :array="firstLine"
       :iterations="1"
       :start="500"
       :typeSpeed="70"
     />
-    <VueWriter :array="arr1" :iterations="1" :start="2000" :typeSpeed="70" />
     <VueWriter
-      :array="arr2"
+      :array="secondLine"
       :iterations="1"
-      :start="3000"
-      :delay="1000"
+      :start="1500"
       :typeSpeed="70"
     />
-    <p class="end">&lt/h1&gt</p>
+    <VueWriter
+      :array="thirdLine"
+      :iterations="1"
+      :start="2200"
+      :typeSpeed="70"
+    />
+    <p class="endH1">&lt;/h1&gt;</p>
   </main>
 </template>
 
@@ -30,31 +33,27 @@ const arr2 = ['developer'];
 main {
   display: flex;
   flex-direction: column;
-  align-content: flex-end;
-  padding: 10px;
 }
-
 .is-typed {
   font-weight: 200;
   font-size: clamp(16px, 40px, 96px);
-  line-height: 90%;
-  font-family: 'Alfa Slab One', cursive;
+  line-height: 95%;
+  font-family: "Alfa Slab One", cursive;
+}
+p {
+  font-size: clamp(16px, 24px, 32px);
+  font-family: "Pacifico", cursive;
+  opacity: 0.5;
+}
+.startH1 {
+  margin-left: -20px;
+}
+.endH1 {
+  margin-left: auto;
 }
 @media (min-width: 600px) {
   .is-typed {
     font-size: clamp(24px, 60px, 96px);
   }
-}
-
-p {
-  font-size: clamp(16px, 24px, 32px);
-  font-family: 'Pacifico', cursive;
-  opacity: 0.5;
-}
-.start {
-  transform: translateX(-20px);
-}
-.end {
-  align-self: flex-end;
 }
 </style>

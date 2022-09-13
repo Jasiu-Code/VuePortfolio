@@ -47,7 +47,8 @@ h2 {
   font-size: 32px;
 }
 h2:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   transition: 0.3s ease;
+  cursor: pointer;
 }
 </style>
