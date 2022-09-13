@@ -33,6 +33,7 @@ const props = defineProps({
 }
 
 .modal {
+  position: relative;
   text-align: center;
   background-color: white;
   display: flex;

@@ -1,12 +1,12 @@
 <script setup>
-import data from '../assets/data.json';
-import SkillsModal from '../components/SkillsModal.vue';
-import { reactive, ref } from 'vue';
+import data from "../assets/data.json";
+import SkillsModal from "../components/SkillsModal.vue";
+import { reactive, ref } from "vue";
 const state = reactive({
   currentName: null,
   showModal: false,
 });
-// const showModal = ref(false);
+
 function showItem(itemData) {
   state.showModal = true;
   state.currentName = itemData.name;

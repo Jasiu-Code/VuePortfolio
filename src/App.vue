@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import { ref } from 'vue';
+import { RouterLink, RouterView } from "vue-router";
+import { ref } from "vue";
 
-const colorMainGrey = ref(true);
+const colorMainGrey = ref(false);
 
 const setYellowTheme = () => {
   colorMainGrey.value = true;
@@ -38,12 +38,14 @@ const setGreyTheme = () => {
 <style scoped>
 .wrapper {
   display: flex;
+  margin: 0;
   place-items: center;
   justify-content: center;
   align-items: center;
   background: var(--grey);
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 .theme {
   background: var(--yellow);
@@ -65,6 +67,7 @@ nav a {
   font-weight: 700;
   font-size: clamp(16px, 24px, 32px);
   border-radius: 20px;
+  overflow: hidden;
 }
 @media (min-width: 600px) {
   nav a {
@@ -77,35 +80,26 @@ nav a {
   transform: translatey(-50%) rotate(45deg);
   transform-origin: left center;
 }
-.firstNav:hover {
-  border-left: none;
-}
+
 .secondNav {
   top: 0;
   right: 0;
   transform: translatey(-50%) rotate(-45deg);
   transform-origin: right center;
 }
-.secondNav:hover {
-  border-right: none;
-}
+
 .thirdNav {
   bottom: 0;
   left: 0;
   transform: translatey(50%) rotate(-45deg);
   transform-origin: left center;
 }
-.thirdNav:hover {
-  border-left: none;
-}
+
 .fourthNav {
   bottom: 0;
   right: 0;
   transform: translatey(50%) rotate(45deg);
   transform-origin: right center;
-}
-.fourthNav:hover {
-  border-right: none;
 }
 
 nav a.router-link-exact-active {
@@ -122,9 +116,22 @@ nav a:hover {
   background: var(--grey);
   color: var(--yellow);
 }
-.themeNav a:hover {
+.themeNav:hover {
   background-color: transparent;
   border: 3px solid var(--grey);
   color: var(--grey);
+}
+.firstNav:hover {
+  border-left: none;
+}
+.secondNav:hover {
+  border-right: none;
+}
+.thirdNav:hover {
+  border-left: none;
+}
+
+.fourthNav:hover {
+  border-right: none;
 }
 </style>
