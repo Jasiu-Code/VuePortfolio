@@ -2,61 +2,61 @@
   {
     "id": 1,
     "name": "html",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 2,
     "name": "css",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 3,
     "name": "js",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 4,
     "name": "git",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 5,
     "name": "vue",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 6,
     "name": "react",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 7,
     "name": "nextjs",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 8,
     "name": "solidity",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 9,
     "name": "web3.js",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 10,
     "name": "figma",
-    "img": "/html.png",
+    "img": "html.png",
     "description": "HTML is bla bla "
   }
 ]

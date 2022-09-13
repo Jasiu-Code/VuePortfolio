@@ -1,16 +1,20 @@
-<script>
-export default {};
+<script setup>
+const props = defineProps({
+  name: String,
+  img: String,
+  description: String,
+});
 </script>
 
 <template>
-  <div class="modal-overlay">
-    <div class="modal">
-      <h1>HTML</h1>
+  <div class="modal-overlay" @click="$emit('close-modal')">
+    <div class="modal" @click.stop>
+      <h1>{{ name }}</h1>
+      <img :src="'../src/components/icons/' + img" />
       <p class="description">
-        Desciption Desciption Desciption Desciption Desciption Desciption
-        Desciption Desciption
+        {{ description }}
       </p>
-      <button>Close</button>
+      <button @click="$emit('close-modal')">Close</button>
     </div>
   </div>
 </template>
@@ -48,6 +52,12 @@ export default {};
 button {
   margin: 10% 0 0 16px;
   cursor: pointer;
+}
+img {
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 button {

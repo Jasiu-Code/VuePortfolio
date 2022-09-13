@@ -1,16 +1,35 @@
 <script setup>
 import data from '../assets/data.json';
 import SkillsModal from '../components/SkillsModal.vue';
-import { ref } from 'vue';
-const showModal = ref(true);
+import { reactive, ref } from 'vue';
+const state = reactive({
+  currentName: null,
+  showModal: false,
+});
+// const showModal = ref(false);
+function showItem(itemData) {
+  state.showModal = true;
+  state.currentName = itemData.name;
+  state.currentImg = itemData.img;
+  state.currentDescription = itemData.description;
+  console.log(itemData.img);
+}
 </script>
 <template>
   <div class="skillsContainer">
-    <div v-for="item in data" :key="item.id">
-      <p>{{ item.name.toUpperCase() }}</p>
+    <div v-for="skill in data" :key="skill.id">
+      <h2 @click="showItem(skill)">
+        {{ skill.name.toUpperCase() }}
+      </h2>
     </div>
+    <SkillsModal
+      :name="state.currentName"
+      :img="state.currentImg"
+      :description="state.currentDescription"
+      v-show="state.showModal"
+      @close-modal="state.showModal = false"
+    />
   </div>
-  <SkillsModal v-show="showModal" />
 </template>
 
 <style>
@@ -19,7 +38,7 @@ const showModal = ref(true);
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
-p {
+h2 {
   background: var(--grey);
   text-align: center;
   padding: 5px 10px;
@@ -27,7 +46,7 @@ p {
   font-weight: 700;
   font-size: 32px;
 }
-p:hover {
+h2:hover {
   transform: scale(1.05);
   transition: 0.3s ease;
 }
