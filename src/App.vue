@@ -110,6 +110,7 @@ nav a {
 
 nav a.router-link-exact-active {
   color: white;
+  border: 3px solid white;
 }
 
 nav a:hover {
@@ -119,7 +120,7 @@ nav a:hover {
 }
 .themeNav a {
   background: var(--grey);
-  color: white;
+  color: var(--yellow);
 }
 .themeNav a:hover {
   background-color: transparent;
