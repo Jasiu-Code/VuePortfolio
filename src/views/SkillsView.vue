@@ -17,7 +17,7 @@ function showItem(itemData) {
 </script>
 <template>
   <div class="skillsContainer">
-    <div v-for="skill in data" :key="skill.id">
+    <div class="skill" v-for="skill in data" :key="skill.id">
       <h2 @click="showItem(skill)">
         {{ skill.name.toUpperCase() }}
       </h2>
@@ -37,6 +37,17 @@ function showItem(itemData) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+}
+.skill {
+  animation: dropCard 0.6s linear 0s;
+}
+@keyframes dropCard {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
 }
 h2 {
   background: var(--grey);

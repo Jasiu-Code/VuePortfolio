@@ -39,32 +39,34 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   color: var(--grey);
   height: 500px;
   width: 500px;
-  margin-top: 10%;
-  padding: 60px 0;
+  padding: 60px 10px;
   border-radius: 20px;
 }
 .description {
   background: white;
   font-size: 18px;
+  overflow: scroll;
+  margin-bottom: 10px;
 }
 button {
-  margin: 10% 0 0 16px;
   cursor: pointer;
 }
 img {
-  width: 100px;
+  width: 90px;
+  height: 90px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
 }
 
 button {
-  background-color: #ac003e;
+  background: var(--red);
   width: 150px;
-  height: 40px;
+  min-height: 30px;
   color: white;
   font-size: 14px;
   border-radius: 16px;

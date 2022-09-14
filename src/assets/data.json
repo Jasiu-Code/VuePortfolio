@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "name": "html",
+    "name": "HTML",
     "img": "html.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 2,
-    "name": "css",
-    "img": "html.png",
-    "description": "HTML is bla bla "
+    "name": "CSS",
+    "img": "css.png",
+    "description": "HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla blaHTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla HTML is bla bla "
   },
   {
     "id": 3,
-    "name": "js",
-    "img": "html.png",
+    "name": "JS",
+    "img": "JS.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 4,
-    "name": "git",
-    "img": "html.png",
+    "name": "GIT",
+    "img": "git.png",
     "description": "HTML is bla bla "
   },
   {
@@ -31,8 +31,8 @@
   },
   {
     "id": 6,
-    "name": "react",
-    "img": "html.png",
+    "name": "REACT",
+    "img": "react.png",
     "description": "HTML is bla bla "
   },
   {
@@ -55,8 +55,8 @@
   },
   {
     "id": 10,
-    "name": "figma",
-    "img": "html.png",
+    "name": "FIGMA",
+    "img": "figma.png",
     "description": "HTML is bla bla "
   }
 ]
