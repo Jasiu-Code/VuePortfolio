@@ -1,7 +1,8 @@
 <script setup>
-import data from "../assets/data.json";
-import SkillsModal from "../components/SkillsModal.vue";
-import { reactive, ref } from "vue";
+import data from '../assets/data.json';
+import SkillsModal from '../components/SkillsModal.vue';
+import { reactive, ref } from 'vue';
+import { createClient } from 'contentful';
 const state = reactive({
   currentName: null,
   showModal: false,
@@ -12,8 +13,18 @@ function showItem(itemData) {
   state.currentName = itemData.name;
   state.currentImg = itemData.img;
   state.currentDescription = itemData.description;
-  console.log(itemData.img);
 }
+
+const client = createClient({
+  space: import.meta.env.VITE_SPACE_ID,
+  environment: import.meta.env.VITE_ENVIRONMENT, // defaults to 'master' if not set
+  accessToken: import.meta.env.VITE_ACCESS_TOKEN,
+});
+
+client
+  .getEntries()
+  .then((response) => console.log(response.items))
+  .catch(console.error);
 </script>
 <template>
   <div class="skillsContainer">
@@ -39,11 +50,12 @@ function showItem(itemData) {
   gap: 15px;
 }
 .skill {
-  animation: dropCard 0.6s linear 0s;
+  animation: dropCard 1s linear 0s;
+  backface-visibility: hidden;
 }
 @keyframes dropCard {
   0% {
-    transform: rotateX(-90deg);
+    transform: rotateX(-180deg);
   }
   100% {
     transform: rotateX(0deg);

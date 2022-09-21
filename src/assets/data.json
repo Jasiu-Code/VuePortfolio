@@ -26,7 +26,7 @@
   {
     "id": 5,
     "name": "vue",
-    "img": "html.png",
+    "img": "vue.png",
     "description": "HTML is bla bla "
   },
   {
@@ -38,19 +38,19 @@
   {
     "id": 7,
     "name": "nextjs",
-    "img": "html.png",
+    "img": "nextjs.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 8,
     "name": "solidity",
-    "img": "html.png",
+    "img": "solidity.png",
     "description": "HTML is bla bla "
   },
   {
     "id": 9,
-    "name": "web3.js",
-    "img": "html.png",
+    "name": "SCSS",
+    "img": "sass.png",
     "description": "HTML is bla bla "
   },
   {

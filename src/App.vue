@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import { ref } from "vue";
+import { RouterLink, RouterView } from 'vue-router';
+import { ref } from 'vue';
 const colorMainGrey = ref(false);
 const setYellowTheme = () => (colorMainGrey.value = true);
 const setGreyTheme = () => (colorMainGrey.value = false);
@@ -70,16 +70,35 @@ const setGreyTheme = () => (colorMainGrey.value = false);
 .navlink {
   position: absolute;
   background: var(--yellow);
-  padding: 10px 50px;
   color: var(--grey);
   font-weight: 700;
-  font-size: clamp(16px, 24px, 32px);
+  font-size: 1.5rem;
+  padding: 14px 50px;
   border-radius: 20px;
   overflow: hidden;
 }
 @media (min-width: 600px) {
   .navlink {
     padding: 20px 100px;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 900px) {
+  .navlink {
+    font-size: 2.5rem;
+    padding: 20px 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .navlink {
+    font-size: 3rem;
+    padding: 25px 125px;
+  }
+}
+@media (min-width: 1720px) {
+  .navlink {
+    font-size: 3.5rem;
+    padding: 30px 150px;
   }
 }
 .navlink.router-link-exact-active {
@@ -150,24 +169,31 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   border-right: none;
 }
 .first-enter-active {
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 .second-enter-active {
-  transition: all 0.5s ease;
-  transition-delay: 0.1s;
+  transition: all 1s ease;
 }
 .third-enter-active {
-  transition: all 0.5s ease;
-  transition-delay: 0.2s;
+  transition: all 1s ease;
 }
 .fourth-enter-active {
-  transition: all 0.5s ease;
-  transition-delay: 0.3s;
+  transition: all 1s ease;
 }
-.first-enter-from,
-.second-enter-from,
-.third-enter-from,
+.first-enter-from {
+  transform: rotate(0deg);
+  opacity: 0;
+}
+.second-enter-from {
+  transform: rotate(0deg);
+  opacity: 0;
+}
+.third-enter-from {
+  transform: rotate(0deg);
+  opacity: 0;
+}
 .fourth-enter-from {
+  transform: rotate(0deg);
   opacity: 0;
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const firstLine: string[] = ["Hi! I'm Jasiu"];
-const secondLine: string[] = ["front-end"];
-const thirdLine: string[] = ["developer"];
+const secondLine: string[] = ['front-end'];
+const thirdLine: string[] = ['developer'];
 </script>
 
 <template>
@@ -36,13 +36,14 @@ main {
 }
 .is-typed {
   font-weight: 200;
-  font-size: clamp(16px, 40px, 96px);
+  font-size: 2rem;
   line-height: 95%;
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
 }
 p {
-  font-size: clamp(16px, 24px, 32px);
-  font-family: "Pacifico", cursive;
+  font-size: 0.8rem;
+  font-family: 'Pacifico', cursive;
   opacity: 0.5;
 }
 .startH1 {
@@ -53,7 +54,34 @@ p {
 }
 @media (min-width: 600px) {
   .is-typed {
-    font-size: clamp(24px, 60px, 96px);
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 900px) {
+  .is-typed {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .is-typed {
+    font-size: 6rem;
+  }
+  p {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1720px) {
+  .is-typed {
+    font-size: 8rem;
+  }
+  p {
+    font-size: 4rem;
   }
 }
 </style>

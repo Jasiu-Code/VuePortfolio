@@ -1,26 +1,83 @@
-<script setup></script>
+<script setup>
+import emailjs from '@emailjs/browser';
+import { ref } from 'vue';
+
+const form = ref(null);
+const inputFieldReset = ref(null);
+const serviceName = import.meta.env.VITE_SERVICE_ID;
+const templateName = import.meta.env.VITE_TEMPLATE_ID;
+const publicKEY = import.meta.env.VITE_PUBLIC_KEY;
+
+const sendMail = () => {
+  emailjs.sendForm(serviceName, templateName, form.value, publicKEY).then(
+    () => {
+      alert('Message sent!');
+      inputFieldReset.value = '';
+    },
+    (error) => {
+      alert('Message not sent', error);
+    }
+  );
+};
+</script>
 <template>
   <div class="contactFormContainer">
     <h1>Let me know!</h1>
-    <form>
-      <input type="text" placeholder="Your name:" />
-      <input type="text" placeholder="Your email:" />
-      <textarea rows="5" cols="30" placeholder="Message:"></textarea>
+    <form ref="form" @submit.prevent="sendMail">
+      <label for="name">Name:</label>
+      <input
+        name="from_name"
+        id="name"
+        type="text"
+        placeholder="Your name:"
+        :value="inputFieldReset"
+        required
+      />
+      <label for="email">Email:</label>
+      <input
+        name="reply_to"
+        id="email"
+        type="email"
+        placeholder="Your email:"
+        :value="inputFieldReset"
+        required
+      />
+      <label for="message">Message:</label>
+      <textarea
+        name="message"
+        id="message"
+        rows="5"
+        cols="30"
+        minlength="10"
+        maxlength="200"
+        placeholder="Message:"
+        :value="inputFieldReset"
+        required
+      ></textarea>
       <button type="submit">Send it!</button>
     </form>
   </div>
 </template>
 
 <style scoped>
+h1,
+label {
+  color: var(--grey);
+}
+label {
+  align-self: flex-start;
+}
 .contactFormContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: var(--yellow);
-  width: 380px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   border-radius: 20px;
+  transition-duration: 0.6s;
+  padding: 10px;
 }
 form {
   display: flex;
@@ -36,8 +93,12 @@ input {
   border: none;
 }
 input::placeholder {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
 }
+input:invalid {
+  border: 2px dashed red;
+}
+
 textarea {
   width: 300px;
   height: 100px;
@@ -47,8 +108,12 @@ textarea {
   border: none;
 }
 textarea::placeholder {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
 }
+textarea:invalid {
+  border: 2px dashed red;
+}
+
 button {
   margin-top: 20px;
   padding: 10px 20px;

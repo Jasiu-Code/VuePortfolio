@@ -1,11 +1,10 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
     <div class="textAbout">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vero
-      est totam reprehenderit ab quam beatae earum sequi maiores veniam eaque
-      consequatur possimus eos alias, labore dignissimos voluptate sunt
-      praesentium!
+      I am front-end developer. This site was created using VUE3 for content
+      management I used content full. For the email part emailsJS take care. If
+      you want to contact me, or you have any remarks for this website maybe any
+      ideas how to improve please use contant form!
     </div>
     <img src="../assets/foto.png" alt="" />
   </div>
