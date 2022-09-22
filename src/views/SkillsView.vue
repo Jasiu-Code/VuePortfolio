@@ -1,42 +1,63 @@
 <script setup>
-import data from "../assets/data.json";
 import SkillsModal from "../components/SkillsModal.vue";
 import { reactive, ref } from "vue";
+import axios from "axios";
 const state = reactive({
   currentName: null,
   showModal: false,
   currentImg: null,
   currentDescription: null,
-  // skills: ["dupa"],
 });
 const skills = ref([]);
 
 function showItem(itemData) {
   state.showModal = true;
-  state.currentName = itemData.name;
-  state.currentImg = itemData.img;
+  state.currentName = itemData.title;
+  state.currentImg = itemData.url;
   state.currentDescription = itemData.description;
 }
 const space_id = import.meta.env.VITE_SPACE_ID;
 const environment_id = import.meta.env.VITE_ENVIRONMENT;
 const access_token = import.meta.env.VITE_ACCESS_TOKEN;
 
-fetch(
+const entries = axios.get(
   `https://cdn.contentful.com/spaces/${space_id}/environments/${environment_id}/entries?access_token=${access_token}`
-)
-  .then((response) => response.json())
-  .then((rawData) => (skills.value = rawData))
+);
+const assets = axios.get(
+  `https://cdn.contentful.com/spaces/${space_id}/environments/${environment_id}/assets?access_token=${access_token}`
+);
+axios
+  .all([entries, assets])
+  .then(
+    axios.spread((...responses) => {
+      const responseEntries = responses[0].data.items.map(
+        (item) => item.fields
+      );
+      const responseAssets = responses[1].data.items.map((item) => item.fields);
+
+      console.log(responses[1].data.items[0].fields);
+
+      for (let i = 0; i < responseEntries.length; i++) {
+        for (let j = 0; j < responseAssets.length; j++) {
+          responseEntries[i].title.toUpperCase() ==
+          responseAssets[j].title.toUpperCase()
+            ? (responseEntries[i].url = "https:" + responseAssets[j].file.url)
+            : null;
+        }
+      }
+      skills.value = responseEntries;
+    })
+  )
   .catch((error) => console.log(error));
 </script>
 
 <template>
   <div class="skillsContainer">
-    <div class="skill" v-for="skill in data" :key="skill.id">
+    <div class="skill" v-for="skill in skills" :key="skill.title">
       <h2 @click="showItem(skill)">
-        {{ skill.name }}
+        {{ skill.title }}
       </h2>
     </div>
-
     <SkillsModal
       :name="state.currentName"
       :img="state.currentImg"

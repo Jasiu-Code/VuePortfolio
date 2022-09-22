@@ -10,7 +10,7 @@ const props = defineProps({
   <div class="modal-overlay" @click="$emit('close-modal')">
     <div class="modal" @click.stop>
       <h1>{{ name }}</h1>
-      <img :src="'../src/components/icons/' + img" />
+      <img :src="`${img}`" />
       <p class="description">
         {{ description }}
       </p>

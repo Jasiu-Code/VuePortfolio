@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
-import { ref } from 'vue';
+import { RouterLink, RouterView } from "vue-router";
+import { ref } from "vue";
 const colorMainGrey = ref(false);
 const setYellowTheme = () => (colorMainGrey.value = true);
 const setGreyTheme = () => (colorMainGrey.value = false);
