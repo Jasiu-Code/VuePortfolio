@@ -1,12 +1,15 @@
 <script setup>
-import data from '../assets/data.json';
-import SkillsModal from '../components/SkillsModal.vue';
-import { reactive, ref } from 'vue';
-import { createClient } from 'contentful';
+import data from "../assets/data.json";
+import SkillsModal from "../components/SkillsModal.vue";
+import { reactive, ref } from "vue";
 const state = reactive({
   currentName: null,
   showModal: false,
+  currentImg: null,
+  currentDescription: null,
+  // skills: ["dupa"],
 });
+const skills = ref([]);
 
 function showItem(itemData) {
   state.showModal = true;
@@ -14,25 +17,26 @@ function showItem(itemData) {
   state.currentImg = itemData.img;
   state.currentDescription = itemData.description;
 }
+const space_id = import.meta.env.VITE_SPACE_ID;
+const environment_id = import.meta.env.VITE_ENVIRONMENT;
+const access_token = import.meta.env.VITE_ACCESS_TOKEN;
 
-const client = createClient({
-  space: import.meta.env.VITE_SPACE_ID,
-  environment: import.meta.env.VITE_ENVIRONMENT, // defaults to 'master' if not set
-  accessToken: import.meta.env.VITE_ACCESS_TOKEN,
-});
-
-client
-  .getEntries()
-  .then((response) => console.log(response.items))
-  .catch(console.error);
+fetch(
+  `https://cdn.contentful.com/spaces/${space_id}/environments/${environment_id}/entries?access_token=${access_token}`
+)
+  .then((response) => response.json())
+  .then((rawData) => (skills.value = rawData))
+  .catch((error) => console.log(error));
 </script>
+
 <template>
   <div class="skillsContainer">
     <div class="skill" v-for="skill in data" :key="skill.id">
       <h2 @click="showItem(skill)">
-        {{ skill.name.toUpperCase() }}
+        {{ skill.name }}
       </h2>
     </div>
+
     <SkillsModal
       :name="state.currentName"
       :img="state.currentImg"
