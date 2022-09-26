@@ -11,14 +11,14 @@ const props = defineProps({
 <template>
   <div class="modal-overlay" @click="$emit('close-modal')">
     <div class="modal" @click.stop>
-      <h1>{{ name }}</h1>
+      <h1>{{ name.toUpperCase() }}</h1>
       <img :src="`${img}`" />
       <p class="description">
         {{ description }}
       </p>
 
-      <ul v-for="item in list" :key="item">
-        <li>{{ item }}</li>
+      <ul>
+        <li v-for="item in list" :key="item">{{ item }}</li>
       </ul>
       <a v-if="link" :href="`${link}`" target="_blank"
         >Check my webside done with {{ name }}</a
@@ -30,10 +30,26 @@ const props = defineProps({
 </template>
 
 <style scoped>
+p {
+  margin: auto 0;
+}
 a {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+ul {
+  list-style: none;
+  text-align: left;
+}
+li {
+  position: relative;
+}
+li::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='green' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z' /%3E%3C/svg%3E");
+  position: absolute;
+  width: 20px;
+  left: -20px;
 }
 .modal-overlay {
   position: fixed;
