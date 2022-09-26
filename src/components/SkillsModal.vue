@@ -1,8 +1,10 @@
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
   name: String,
   img: String,
+  list: Array,
   description: String,
+  link: String,
 });
 </script>
 
@@ -14,12 +16,25 @@ const props = defineProps({
       <p class="description">
         {{ description }}
       </p>
+
+      <ul v-for="item in list" :key="item">
+        <li>{{ item }}</li>
+      </ul>
+      <a v-if="link" :href="`${link}`" target="_blank"
+        >Check my webside done with {{ name }}</a
+      >
+
       <button @click="$emit('close-modal')">Close</button>
     </div>
   </div>
 </template>
 
 <style scoped>
+a {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
