@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
   <div class="modal-overlay" @click="$emit('close-modal')">
     <div class="modal" @click.stop>
-      <h1>{{ name.toUpperCase() }}</h1>
+      <h1>{{ name }}</h1>
       <img :src="`${img}`" />
       <p class="description">
         {{ description }}
@@ -32,6 +32,9 @@ const props = defineProps({
 <style scoped>
 p {
   margin: auto 0;
+  padding: 0 20px;
+
+  text-align: justify;
 }
 a {
   position: absolute;
