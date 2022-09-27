@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import emailjs from "@emailjs/browser";
 import { ref } from "vue";
 

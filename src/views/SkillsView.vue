@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import SkillsModal from "../components/SkillsModal.vue";
 import { reactive, ref } from "vue";
 import axios from "axios";
