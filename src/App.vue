@@ -127,12 +127,14 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   border: 3px solid var(--grey);
   color: white;
 }
+
 .firstNav {
   top: 0;
   left: 0;
   transform: translatey(-50%) rotate(45deg);
   transform-origin: left center;
 }
+
 .secondNav {
   top: 0;
   right: 0;
@@ -150,6 +152,20 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   right: 0;
   transform: translatey(50%) rotate(45deg);
   transform-origin: right center;
+}
+@media screen and (orientation: landscape) {
+  .firstNav {
+    transform: translatey(-25%) translateX(-25%) rotate(0deg);
+  }
+  .secondNav {
+    transform: translatey(-25%) translateX(25%) rotate(0deg);
+  }
+  .thirdNav {
+    transform: translatey(25%) translateX(-25%) rotate(0deg);
+  }
+  .fourthNav {
+    transform: translatey(25%) translateX(25%) rotate(0deg);
+  }
 }
 .themeNav {
   background: var(--grey);
