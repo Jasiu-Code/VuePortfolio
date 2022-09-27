@@ -24,8 +24,9 @@ const setGreyTheme = () => (colorMainGrey.value = false);
           class="navlink secondNav"
           :class="{ themeNav: colorMainGrey }"
           to="/skills"
-          >Skills</RouterLink
         >
+          Skills
+        </RouterLink>
       </Transition>
       <Transition name="third" appear>
         <RouterLink
@@ -42,8 +43,9 @@ const setGreyTheme = () => (colorMainGrey.value = false);
           class="navlink fourthNav"
           :class="{ themeNav: colorMainGrey }"
           to="/about"
-          >About</RouterLink
         >
+          About
+        </RouterLink>
       </Transition>
     </nav>
     <RouterView />
@@ -76,6 +78,7 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   padding: 14px 50px;
   border-radius: 20px;
   overflow: hidden;
+  white-space: pre;
 }
 @media (min-width: 600px) {
   .navlink {
