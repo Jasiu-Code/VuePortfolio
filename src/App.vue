@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { ref } from "vue";
 const colorMainGrey = ref(false);
