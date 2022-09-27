@@ -1,6 +1,6 @@
 <script setup>
-import emailjs from '@emailjs/browser';
-import { ref } from 'vue';
+import emailjs from "@emailjs/browser";
+import { ref } from "vue";
 
 const form = ref(null);
 const inputFieldReset = ref(null);
@@ -11,55 +11,66 @@ const publicKEY = import.meta.env.VITE_PUBLIC_KEY;
 const sendMail = () => {
   emailjs.sendForm(serviceName, templateName, form.value, publicKEY).then(
     () => {
-      alert('Message sent!');
-      inputFieldReset.value = '';
+      alert("Message sent!");
+      inputFieldReset.value = "";
     },
     (error) => {
-      alert('Message not sent', error);
+      alert("Message not sent", error);
     }
   );
 };
 </script>
 <template>
-  <div class="contactFormContainer">
-    <h1>Let me know!</h1>
-    <form ref="form" @submit.prevent="sendMail">
-      <label for="name">Name:</label>
-      <input
-        name="from_name"
-        id="name"
-        type="text"
-        placeholder="Your name:"
-        :value="inputFieldReset"
-        required
-      />
-      <label for="email">Email:</label>
-      <input
-        name="reply_to"
-        id="email"
-        type="email"
-        placeholder="Your email:"
-        :value="inputFieldReset"
-        required
-      />
-      <label for="message">Message:</label>
-      <textarea
-        name="message"
-        id="message"
-        rows="5"
-        cols="30"
-        minlength="10"
-        maxlength="200"
-        placeholder="Message:"
-        :value="inputFieldReset"
-        required
-      ></textarea>
-      <button type="submit">Send it!</button>
-    </form>
-  </div>
+  <Transition appear>
+    <div class="contactFormContainer">
+      <h1>Let me know!</h1>
+      <form ref="form" @submit.prevent="sendMail">
+        <label for="name">Name:</label>
+        <input
+          name="from_name"
+          id="name"
+          type="text"
+          placeholder="Your name:"
+          :value="inputFieldReset"
+          required
+        />
+        <label for="email">Email:</label>
+        <input
+          name="reply_to"
+          id="email"
+          type="email"
+          placeholder="Your email:"
+          :value="inputFieldReset"
+          required
+        />
+        <label for="message">Message:</label>
+        <textarea
+          name="message"
+          id="message"
+          rows="5"
+          cols="30"
+          minlength="10"
+          maxlength="200"
+          placeholder="Message:"
+          :value="inputFieldReset"
+          required
+        ></textarea>
+        <button type="submit">Send it!</button>
+      </form>
+    </div>
+  </Transition>
 </template>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 h1,
 label {
   color: var(--grey);
@@ -93,7 +104,7 @@ input {
   border: none;
 }
 input::placeholder {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 input:invalid {
   border: 2px dashed red;
@@ -108,7 +119,7 @@ textarea {
   border: none;
 }
 textarea::placeholder {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 textarea:invalid {
   border: 2px dashed red;

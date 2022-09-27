@@ -51,6 +51,10 @@ axios
     })
   )
   .catch((error) => console.log(error));
+
+function openNewPage(link) {
+  window.open(`${link}`);
+}
 </script>
 
 <template>
@@ -58,23 +62,27 @@ axios
     <div class="skill" v-for="skill in skills" :key="skill.title">
       <h2 @click="showItem(skill)">
         {{ skill.title.toUpperCase() }}
-        <div class="iconContainer" v-if="skill.link">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="{1.5}"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
-            />
-          </svg>
-        </div>
       </h2>
+      <div
+        class="iconContainer"
+        v-if="skill.link"
+        @click="openNewPage(skill.link)"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="{1.5}"
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+          />
+        </svg>
+      </div>
     </div>
     <SkillsModal
       :name="state.currentName"
@@ -92,8 +100,8 @@ axios
 .iconContainer {
   width: 25px;
   position: absolute;
-  top: 6px;
-  right: 5px;
+  top: 3px;
+  right: 3px;
 }
 .iconContainer:hover {
   color: red;
@@ -105,18 +113,28 @@ axios
 }
 .skill {
   animation: dropCard 1s linear 0s;
-  backface-visibility: hidden;
+  background: var(--grey);
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 24px;
   position: relative;
+}
+.skill:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 @keyframes dropCard {
   0% {
-    transform: rotateX(-180deg);
+    transform: rotateX(-90deg);
   }
   100% {
     transform: rotateX(0deg);
   }
 }
-h2 {
+/* h2 {
   background: var(--grey);
   text-align: center;
   padding: 5px 10px;
@@ -128,5 +146,5 @@ h2:hover {
   transform: scale(1.1);
   transition: 0.3s ease;
   cursor: pointer;
-}
+} */
 </style>

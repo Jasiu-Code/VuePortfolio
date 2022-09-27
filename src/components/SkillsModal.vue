@@ -9,27 +9,38 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="modal-overlay" @click="$emit('close-modal')">
-    <div class="modal" @click.stop>
-      <h1>{{ name }}</h1>
-      <img :src="`${img}`" />
-      <p class="description">
-        {{ description }}
-      </p>
+  <Transition appear>
+    <div class="modal-overlay" @click="$emit('close-modal')">
+      <div class="modal" @click.stop>
+        <h1>{{ name }}</h1>
+        <img :src="`${img}`" />
+        <p class="description">
+          {{ description }}
+        </p>
 
-      <ul>
-        <li v-for="item in list" :key="item">{{ item }}</li>
-      </ul>
-      <a v-if="link" :href="`${link}`" target="_blank"
-        >Check my webside done with {{ name }}</a
-      >
+        <ul>
+          <li v-for="item in list" :key="item">{{ item }}</li>
+        </ul>
+        <a v-if="link" :href="`${link}`" target="_blank"
+          >Check my webside done with {{ name }}</a
+        >
 
-      <button @click="$emit('close-modal')">Close</button>
+        <button @click="$emit('close-modal')">Close</button>
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 p {
   margin: auto 0;
   padding: 0 20px;
@@ -40,6 +51,8 @@ a {
   position: absolute;
   top: 10px;
   left: 10px;
+  text-decoration: none;
+  color: red;
 }
 ul {
   list-style: none;
