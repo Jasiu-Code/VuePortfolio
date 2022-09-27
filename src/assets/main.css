@@ -14,11 +14,10 @@
   font-weight: normal;
 }
 html {
-  height: -webkit-fill-available;
+  height: 100%;
 }
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100%;
   color: white;
   margin: 0;
   font-family: 'Nunito', sans-serif;
@@ -28,4 +27,7 @@ body {
 }
 a {
   text-decoration: none;
+}
+#app {
+  height: 100%;
 }
