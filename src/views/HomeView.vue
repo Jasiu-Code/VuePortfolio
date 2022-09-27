@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const firstLine: string[] = ["Hi! I'm Jasiu"];
-const secondLine: string[] = ["front-end"];
-const thirdLine: string[] = ["developer"];
+const secondLine: string[] = ['front-end'];
+const thirdLine: string[] = ['developer'];
 </script>
 
 <template>
@@ -42,16 +42,16 @@ main {
   font-weight: 200;
   font-size: 2rem;
   line-height: 95%;
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
 }
 p {
   font-size: 0.8rem;
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   opacity: 0.5;
 }
 .startH1 {
-  margin-left: -20px;
+  margin-right: auto;
 }
 .endH1 {
   margin-left: auto;
