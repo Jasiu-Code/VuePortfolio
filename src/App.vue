@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import { ref } from "vue";
+import { RouterLink, RouterView } from 'vue-router';
+import { ref } from 'vue';
 const colorMainGrey = ref(false);
 const setYellowTheme = () => (colorMainGrey.value = true);
 const setGreyTheme = () => (colorMainGrey.value = false);
@@ -56,7 +56,7 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   justify-content: center;
   align-items: center;
   background: var(--grey);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
