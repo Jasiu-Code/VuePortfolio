@@ -1,7 +1,7 @@
 <script setup>
-import SkillsModal from "../components/SkillsModal.vue";
-import { reactive, ref } from "vue";
-import axios from "axios";
+import SkillsModal from '../components/SkillsModal.vue';
+import { reactive, ref } from 'vue';
+import axios from 'axios';
 const state = reactive({
   currentName: null,
   showModal: false,
@@ -43,7 +43,7 @@ axios
         for (let j = 0; j < responseAssets.length; j++) {
           responseEntries[i].title.toUpperCase() ==
           responseAssets[j].title.toUpperCase()
-            ? (responseEntries[i].url = "https:" + responseAssets[j].file.url)
+            ? (responseEntries[i].url = 'https:' + responseAssets[j].file.url)
             : null;
         }
       }
@@ -112,14 +112,19 @@ function openNewPage(link) {
   gap: 15px;
 }
 .skill {
-  animation: dropCard 1s linear 0s;
+  animation: dropCard 0.6s ease 0s;
   background: var(--grey);
   text-align: center;
   padding: 5px 10px;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   position: relative;
+}
+@media (min-width: 600px) {
+  .skill {
+    font-size: 24px;
+  }
 }
 .skill:hover {
   transform: scale(1.1);
@@ -129,9 +134,11 @@ function openNewPage(link) {
 @keyframes dropCard {
   0% {
     transform: rotateX(-90deg);
+    opacity: 0;
   }
   100% {
     transform: rotateX(0deg);
+    opacity: 1;
   }
 }
 /* h2 {

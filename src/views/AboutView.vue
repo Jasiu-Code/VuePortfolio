@@ -47,7 +47,7 @@ img {
   width: 200px;
   margin-left: auto;
 }
-@media screen and (orientation: landscape) {
+@media (max-width: 900px) and (orientation: landscape) {
   img {
     display: none;
   }

@@ -1,7 +1,7 @@
 <script setup>
 const firstLine = ["Hi! I'm Jasiu"];
-const secondLine = ["front-end"];
-const thirdLine = ["developer"];
+const secondLine = ['front-end'];
+const thirdLine = ['developer'];
 </script>
 
 <template>
@@ -11,19 +11,19 @@ const thirdLine = ["developer"];
       :array="firstLine"
       :iterations="1"
       :start="500"
-      :typeSpeed="70"
+      :typeSpeed="60"
     />
     <VueWriter
       :array="secondLine"
       :iterations="1"
       :start="1500"
-      :typeSpeed="70"
+      :typeSpeed="60"
     />
     <VueWriter
       :array="thirdLine"
       :iterations="1"
       :start="2200"
-      :typeSpeed="70"
+      :typeSpeed="60"
     />
     <p class="endH1">&lt;/h1&gt;</p>
   </main>
@@ -40,14 +40,14 @@ main {
 
 .is-typed {
   font-weight: 200;
-  font-size: 2rem;
+  font-size: 2.7rem;
   line-height: 95%;
-  font-family: "Alfa Slab One", cursive;
+  font-family: 'Alfa Slab One', cursive;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
 }
 p {
   font-size: 0.8rem;
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   opacity: 0.5;
 }
 .startH1 {

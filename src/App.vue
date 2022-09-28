@@ -24,8 +24,7 @@ const setGreyTheme = () => (colorMainGrey.value = false);
           class="navlink secondNav"
           :class="{ themeNav: colorMainGrey }"
           to="/skills"
-        >
-          Skills
+          >Skills
         </RouterLink>
       </Transition>
       <Transition name="third" appear>
@@ -75,27 +74,27 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   color: var(--grey);
   font-weight: 700;
   font-size: 1.5rem;
-  padding: 14px 50px;
+  padding: 14px 30px;
   border-radius: 20px;
   overflow: hidden;
   white-space: pre;
 }
 @media (min-width: 600px) {
   .navlink {
-    padding: 20px 100px;
+    padding: 20px 50px;
     font-size: 2rem;
   }
 }
 @media (min-width: 900px) {
   .navlink {
     font-size: 2.5rem;
-    padding: 20px 100px;
+    padding: 20px 70px;
   }
 }
 @media (min-width: 1200px) {
   .navlink {
     font-size: 3rem;
-    padding: 25px 125px;
+    padding: 20px 100px;
   }
 }
 @media (min-width: 1720px) {
@@ -156,7 +155,7 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   transform: translatey(50%) rotate(45deg);
   transform-origin: right center;
 }
-@media screen and (orientation: landscape) {
+@media (max-width: 900px) and (orientation: landscape) {
   .firstNav {
     transform: translatey(-25%) translateX(-25%) rotate(0deg);
   }
@@ -188,16 +187,16 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   border-right: none;
 }
 .first-enter-active {
-  transition: all 1s ease;
+  transition: all 0.6s ease;
 }
 .second-enter-active {
-  transition: all 1s ease;
+  transition: all 0.6s ease;
 }
 .third-enter-active {
-  transition: all 1s ease;
+  transition: all 0.6s ease;
 }
 .fourth-enter-active {
-  transition: all 1s ease;
+  transition: all 0.6s ease;
 }
 .first-enter-from {
   transform: rotate(0deg);
