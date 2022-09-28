@@ -1,26 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-import { ref } from 'vue';
-const colorMainGrey = ref(false);
-const setYellowTheme = () => (colorMainGrey.value = true);
-const setGreyTheme = () => (colorMainGrey.value = false);
 </script>
 
 <template>
-  <div class="wrapper" :class="{ theme: colorMainGrey }">
+  <div class="wrapper">
     <nav>
       <Transition name="first" appear>
-        <RouterLink
-          @click="setGreyTheme"
-          class="navlink firstNav"
-          :class="{ themeNav: colorMainGrey }"
-          to="/"
-          >Home</RouterLink
-        >
+        <RouterLink class="navlink firstNav" to="/">Home</RouterLink>
       </Transition>
       <Transition name="second" appear>
         <RouterLink
-          @click="setYellowTheme"
           class="navlink secondNav"
           :class="{ themeNav: colorMainGrey }"
           to="/skills"
@@ -28,23 +17,10 @@ const setGreyTheme = () => (colorMainGrey.value = false);
         </RouterLink>
       </Transition>
       <Transition name="third" appear>
-        <RouterLink
-          @click="setGreyTheme"
-          class="navlink thirdNav"
-          :class="{ themeNav: colorMainGrey }"
-          to="/contact"
-          >Contact</RouterLink
-        >
+        <RouterLink class="navlink thirdNav" to="/contact">Contact</RouterLink>
       </Transition>
       <Transition name="fourth" appear>
-        <RouterLink
-          @click="setYellowTheme"
-          class="navlink fourthNav"
-          :class="{ themeNav: colorMainGrey }"
-          to="/about"
-        >
-          About
-        </RouterLink>
+        <RouterLink class="navlink fourthNav" to="/about"> About </RouterLink>
       </Transition>
     </nav>
     <RouterView />
@@ -62,6 +38,9 @@ const setGreyTheme = () => (colorMainGrey.value = false);
   position: relative;
   overflow: hidden;
   transition-duration: 0.6s;
+  background-image: url('assets/bg1.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .theme {
   transition-duration: 0.6s;

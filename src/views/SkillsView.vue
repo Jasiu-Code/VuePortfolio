@@ -120,6 +120,7 @@ function openNewPage(link) {
   font-weight: 700;
   font-size: 18px;
   position: relative;
+  border: 3px solid var(--yellow);
 }
 @media (min-width: 600px) {
   .skill {
@@ -141,17 +142,4 @@ function openNewPage(link) {
     opacity: 1;
   }
 }
-/* h2 {
-  background: var(--grey);
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 32px;
-}
-h2:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease;
-  cursor: pointer;
-} */
 </style>

@@ -6,26 +6,28 @@ const thirdLine = ['developer'];
 
 <template>
   <main>
-    <p class="startH1">&lt;h1&gt;</p>
-    <VueWriter
-      :array="firstLine"
-      :iterations="1"
-      :start="500"
-      :typeSpeed="60"
-    />
-    <VueWriter
-      :array="secondLine"
-      :iterations="1"
-      :start="1500"
-      :typeSpeed="60"
-    />
-    <VueWriter
-      :array="thirdLine"
-      :iterations="1"
-      :start="2200"
-      :typeSpeed="60"
-    />
-    <p class="endH1">&lt;/h1&gt;</p>
+    <div class="writerWrapper">
+      <p class="startH1">&lt;h1&gt;</p>
+      <VueWriter
+        :array="firstLine"
+        :iterations="1"
+        :start="500"
+        :typeSpeed="60"
+      />
+      <VueWriter
+        :array="secondLine"
+        :iterations="1"
+        :start="1500"
+        :typeSpeed="60"
+      />
+      <VueWriter
+        :array="thirdLine"
+        :iterations="1"
+        :start="2200"
+        :typeSpeed="60"
+      />
+      <p class="endH1">&lt;/h1&gt;</p>
+    </div>
   </main>
 </template>
 
@@ -35,14 +37,21 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-
+.writerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .is-typed {
   font-weight: 200;
   font-size: 2.7rem;
   line-height: 95%;
   font-family: 'Alfa Slab One', cursive;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  position: relative;
 }
 p {
   font-size: 0.8rem;
