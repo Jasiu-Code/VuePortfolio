@@ -35,7 +35,6 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .is-typed {

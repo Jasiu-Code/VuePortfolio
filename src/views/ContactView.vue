@@ -1,6 +1,6 @@
 <script setup>
-import emailjs from "@emailjs/browser";
-import { ref } from "vue";
+import emailjs from '@emailjs/browser';
+import { ref } from 'vue';
 
 const form = ref(null);
 const inputFieldReset = ref(null);
@@ -11,11 +11,11 @@ const publicKEY = import.meta.env.VITE_PUBLIC_KEY;
 const sendMail = () => {
   emailjs.sendForm(serviceName, templateName, form.value, publicKEY).then(
     () => {
-      alert("Message sent!");
-      inputFieldReset.value = "";
+      alert('Message sent!');
+      inputFieldReset.value = '';
     },
     (error) => {
-      alert("Message not sent", error);
+      alert('Message not sent', error);
     }
   );
 };
@@ -55,7 +55,7 @@ const sendMail = () => {
           :value="inputFieldReset"
           required
         ></textarea>
-        <button type="submit">Send it!</button>
+        <button type="submit">Send!</button>
       </form>
     </div>
   </Transition>
@@ -84,12 +84,13 @@ label {
   align-items: center;
   justify-content: center;
   background: var(--yellow);
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   transition-duration: 0.6s;
   padding: 10px;
 }
+
 form {
   display: flex;
   flex-direction: column;
@@ -97,29 +98,29 @@ form {
   justify-content: center;
 }
 input {
-  width: 300px;
+  width: 250px;
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 10px;
   border: none;
 }
 input::placeholder {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
 }
 input:invalid {
   border: 2px dashed red;
 }
 
 textarea {
-  width: 300px;
-  height: 100px;
+  width: 250px;
+  height: 70px;
   padding: 5px;
   resize: none;
   border-radius: 10px;
   border: none;
 }
 textarea::placeholder {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
 }
 textarea:invalid {
   border: 2px dashed red;
@@ -136,5 +137,18 @@ button {
 }
 button:hover {
   transform: scale(1.1);
+}
+@media (min-width: 600) {
+  .contactFormContainer {
+    width: 400px;
+    height: 400px;
+  }
+  textarea {
+    width: 300px;
+    height: 100px;
+  }
+  input {
+    width: 300px;
+  }
 }
 </style>
