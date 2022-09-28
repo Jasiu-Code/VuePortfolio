@@ -49,14 +49,15 @@ import { RouterLink, RouterView } from 'vue-router';
 
 .navlink {
   position: absolute;
-  background: var(--yellow);
-  color: var(--grey);
+  /* background: var(--yellow); */
+  color: var(--yellow);
   font-weight: 700;
   font-size: 1.5rem;
   padding: 14px 30px;
   border-radius: 20px;
   overflow: hidden;
   white-space: pre;
+  border: 3px solid var(--yellow);
 }
 @media (min-width: 600px) {
   .navlink {
@@ -100,7 +101,7 @@ import { RouterLink, RouterView } from 'vue-router';
 }
 .navlink:hover {
   background-color: transparent;
-  border: 3px solid var(--yellow);
+  border: 3px solid white;
   color: white;
 }
 .themeNav:hover {
@@ -114,6 +115,7 @@ import { RouterLink, RouterView } from 'vue-router';
   left: 0;
   transform: translatey(-50%) rotate(45deg);
   transform-origin: left center;
+  border-left: none;
 }
 
 .secondNav {
@@ -121,18 +123,21 @@ import { RouterLink, RouterView } from 'vue-router';
   right: 0;
   transform: translatey(-50%) rotate(-45deg);
   transform-origin: right center;
+  border-right: none;
 }
 .thirdNav {
   bottom: 0;
   left: 0;
   transform: translatey(50%) rotate(-45deg);
   transform-origin: left center;
+  border-left: none;
 }
 .fourthNav {
   bottom: 0;
   right: 0;
   transform: translatey(50%) rotate(45deg);
   transform-origin: right center;
+  border-right: none;
 }
 @media (max-width: 900px) and (orientation: landscape) {
   .firstNav {

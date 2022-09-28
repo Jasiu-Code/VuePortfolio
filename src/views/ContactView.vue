@@ -23,7 +23,6 @@ const sendMail = () => {
 <template>
   <Transition appear>
     <div class="contactFormContainer">
-      <h1>Let me know!</h1>
       <form ref="form" @submit.prevent="sendMail">
         <label for="name">Name:</label>
         <input
@@ -73,22 +72,22 @@ const sendMail = () => {
 }
 h1,
 label {
-  color: var(--grey);
-}
-label {
+  color: var(--yellow);
   align-self: flex-start;
 }
+
 .contactFormContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--yellow);
+  background: rgba(0, 0, 0, 0.7);
   width: 300px;
   height: 300px;
   border-radius: 20px;
   transition-duration: 0.6s;
   padding: 10px;
+  border: 2px solid var(--yellow);
 }
 
 form {
@@ -130,7 +129,7 @@ button {
   margin-top: 20px;
   padding: 10px 20px;
   color: white;
-  background: var(--grey);
+  background: var(--yellow);
   border: none;
   border-radius: 10px;
   transition: 0.5 ease;
@@ -138,7 +137,7 @@ button {
 button:hover {
   transform: scale(1.1);
 }
-@media (min-width: 600) {
+@media (min-width: 600px) {
   .contactFormContainer {
     width: 400px;
     height: 400px;

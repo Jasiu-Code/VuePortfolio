@@ -3,11 +3,9 @@
     <div class="about">
       <div class="textAbout">
         <h1>
-          I am junior front-end developer.<br />
-          This side was created using VUE3. <br />
-          I started to learn web-development 1,5 year ago. If you want to
-          contact me, or you have any remarks for this website please use
-          contant form!
+          I am junior front-end developer. In my carrer path I would like to
+          develop in modern frameworks such as VUE3 or React. Currently looking
+          for a job where I could improve my skills.
         </h1>
       </div>
       <img src="../assets/foto.png" alt="" />
@@ -33,16 +31,16 @@
 .textAbout {
   width: 350px;
   color: var(--white);
-  background-color: var(--grey);
   padding: 20px;
   border-radius: 20px;
   text-align: justify;
 }
 h1 {
-  font-weight: 500;
-
-  font-size: larger;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 18px;
 }
+
 img {
   width: 200px;
   margin-left: auto;
@@ -50,6 +48,14 @@ img {
 @media (max-width: 900px) and (orientation: landscape) {
   img {
     display: none;
+  }
+}
+@media (min-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+  .textAbout {
+    width: 400px;
   }
 }
 </style>

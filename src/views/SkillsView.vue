@@ -113,7 +113,8 @@ function openNewPage(link) {
 }
 .skill {
   animation: dropCard 0.6s ease 0s;
-  background: var(--grey);
+  background: rgba(0, 0, 0, 0.6);
+
   text-align: center;
   padding: 5px 10px;
   border-radius: 10px;
@@ -125,6 +126,9 @@ function openNewPage(link) {
 @media (min-width: 600px) {
   .skill {
     font-size: 24px;
+  }
+  .skillsContainer {
+    gap: 25px;
   }
 }
 .skill:hover {
