@@ -39,7 +39,7 @@ import { RouterLink, RouterView } from "vue-router";
   overflow: hidden;
   transition-duration: 0.6s;
   /* background-image: url("assets/bg21.svg"); */
-  background-image: url("assets/bg.jpg");
+  background-image: url("assets/bg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
