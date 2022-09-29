@@ -1,7 +1,7 @@
 <script setup>
-import SkillsModal from '../components/SkillsModal.vue';
-import { reactive, ref } from 'vue';
-import axios from 'axios';
+import SkillsModal from "../components/SkillsModal.vue";
+import { reactive, ref } from "vue";
+import axios from "axios";
 const state = reactive({
   currentName: null,
   showModal: false,
@@ -43,7 +43,7 @@ axios
         for (let j = 0; j < responseAssets.length; j++) {
           responseEntries[i].title.toUpperCase() ==
           responseAssets[j].title.toUpperCase()
-            ? (responseEntries[i].url = 'https:' + responseAssets[j].file.url)
+            ? (responseEntries[i].url = "https:" + responseAssets[j].file.url)
             : null;
         }
       }
@@ -113,7 +113,7 @@ function openNewPage(link) {
 }
 .skill {
   animation: dropCard 0.6s ease 0s;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 
   text-align: center;
   padding: 5px 10px;
@@ -121,7 +121,9 @@ function openNewPage(link) {
   font-weight: 700;
   font-size: 18px;
   position: relative;
-  border: 3px solid var(--yellow);
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: 3px 3px 1px rgb(0, 0, 0), 4px 4px 2px rgb(223, 212, 212);
+  /* border: 3px solid var(--yellow); */
 }
 @media (min-width: 600px) {
   .skill {
@@ -135,6 +137,7 @@ function openNewPage(link) {
   transform: scale(1.1);
   transition: 0.3s ease;
   cursor: pointer;
+  color: var(--yellow);
 }
 @keyframes dropCard {
   0% {

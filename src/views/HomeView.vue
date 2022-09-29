@@ -1,7 +1,7 @@
 <script setup>
 const firstLine = ["Hi! I'm Jasiu"];
-const secondLine = ['front-end'];
-const thirdLine = ['developer'];
+const secondLine = ["front-end"];
+const thirdLine = ["developer"];
 </script>
 
 <template>
@@ -49,13 +49,13 @@ main {
   font-weight: 200;
   font-size: 2.7rem;
   line-height: 95%;
-  font-family: 'Alfa Slab One', cursive;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: 6px 6px 2px rgb(0, 0, 0), 7px 7px 2px rgb(223, 212, 212);
   position: relative;
 }
 p {
-  font-size: 0.8rem;
-  font-family: 'Pacifico', cursive;
+  font-size: 0.7rem;
+  font-family: "Pacifico", cursive;
   opacity: 0.5;
 }
 .startH1 {

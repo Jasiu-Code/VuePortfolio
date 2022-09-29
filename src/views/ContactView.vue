@@ -1,6 +1,6 @@
 <script setup>
-import emailjs from '@emailjs/browser';
-import { ref } from 'vue';
+import emailjs from "@emailjs/browser";
+import { ref } from "vue";
 
 const form = ref(null);
 const inputFieldReset = ref(null);
@@ -11,11 +11,11 @@ const publicKEY = import.meta.env.VITE_PUBLIC_KEY;
 const sendMail = () => {
   emailjs.sendForm(serviceName, templateName, form.value, publicKEY).then(
     () => {
-      alert('Message sent!');
-      inputFieldReset.value = '';
+      alert("Message sent!");
+      inputFieldReset.value = "";
     },
     (error) => {
-      alert('Message not sent', error);
+      alert("Message not sent", error);
     }
   );
 };
@@ -29,7 +29,6 @@ const sendMail = () => {
           name="from_name"
           id="name"
           type="text"
-          placeholder="Your name:"
           :value="inputFieldReset"
           required
         />
@@ -38,7 +37,6 @@ const sendMail = () => {
           name="reply_to"
           id="email"
           type="email"
-          placeholder="Your email:"
           :value="inputFieldReset"
           required
         />
@@ -50,7 +48,6 @@ const sendMail = () => {
           cols="30"
           minlength="10"
           maxlength="200"
-          placeholder="Message:"
           :value="inputFieldReset"
           required
         ></textarea>
@@ -74,6 +71,9 @@ h1,
 label {
   color: var(--yellow);
   align-self: flex-start;
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 2px 2px 1px rgb(223, 212, 212);
+  margin-bottom: 5px;
 }
 
 .contactFormContainer {
@@ -84,10 +84,10 @@ label {
   background: rgba(0, 0, 0, 0.7);
   width: 300px;
   height: 300px;
-  border-radius: 20px;
+
   transition-duration: 0.6s;
   padding: 10px;
-  border: 2px solid var(--yellow);
+  border: 5px solid var(--yellow);
 }
 
 form {
@@ -100,11 +100,10 @@ input {
   width: 250px;
   margin-bottom: 10px;
   padding: 5px;
-  border-radius: 10px;
   border: none;
 }
 input::placeholder {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 input:invalid {
   border: 2px dashed red;
@@ -115,11 +114,10 @@ textarea {
   height: 70px;
   padding: 5px;
   resize: none;
-  border-radius: 10px;
   border: none;
 }
 textarea::placeholder {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
 }
 textarea:invalid {
   border: 2px dashed red;
@@ -129,9 +127,10 @@ button {
   margin-top: 20px;
   padding: 10px 20px;
   color: white;
-  background: var(--yellow);
-  border: none;
-  border-radius: 10px;
+  background: none;
+  border: 3px solid var(--yellow);
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0), 2px 2px 1px rgb(223, 212, 212);
   transition: 0.5 ease;
 }
 button:hover {

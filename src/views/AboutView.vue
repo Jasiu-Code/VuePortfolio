@@ -29,6 +29,9 @@
 }
 
 .textAbout {
+  font-family: "Alfa Slab One", cursive;
+
+  font-weight: 100;
   width: 350px;
   color: var(--white);
   padding: 20px;
