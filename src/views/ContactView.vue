@@ -14,19 +14,16 @@ const sendMail = () => {
   emailjs.sendForm(serviceName, templateName, form.value, publicKEY).then(
     () => {
       message.value = 'Thank you! I will respond soon.';
+      openModal.value = true;
       inputFieldReset.value = '';
-      emailModal();
     },
     (error) => {
       message.value =
         "I'm sorry something went wrong! Contact me directly: jan@kaletka.com.pl";
-      emailModal();
+      openModal.value = true;
+      inputFieldReset.value = '';
     }
   );
-};
-const emailModal = () => {
-  openModal.value = true;
-  setTimeout((openModal.value = false), 5000);
 };
 </script>
 <template>
