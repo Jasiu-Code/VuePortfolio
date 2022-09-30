@@ -1,44 +1,59 @@
 <script setup>
-const firstLine = ["Hi! I'm Jasiu"];
-const secondLine = ["front-end"];
-const thirdLine = ["developer"];
+const firstLine = [" I'm Jasiu"];
+const secondLine = ['front-end'];
+const thirdLine = ['deloper', 'developer'];
+const fourthLine = ['Hi!'];
 </script>
 
 <template>
   <main>
     <div class="writerWrapper">
-      <p class="startH1">&lt;h1&gt;</p>
-      <VueWriter
-        :array="firstLine"
-        :iterations="1"
-        :start="500"
-        :typeSpeed="60"
-      />
+      <Transition appear>
+        <p>&lt;h1&gt;</p>
+      </Transition>
+      <div style="display: flex">
+        <VueWriter
+          :array="fourthLine"
+          :iterations="1"
+          :start="100"
+          :typeSpeed="50"
+        />
+        <VueWriter
+          :array="firstLine"
+          :iterations="1"
+          :start="500"
+          :typeSpeed="50"
+        />
+      </div>
       <VueWriter
         :array="secondLine"
         :iterations="1"
-        :start="1500"
-        :typeSpeed="60"
+        :start="1300"
+        :typeSpeed="50"
       />
       <VueWriter
         :array="thirdLine"
         :iterations="1"
-        :start="2200"
-        :typeSpeed="60"
+        :start="1900"
+        :typeSpeed="40"
+        :eraseSpeed="30"
+        :delay="150"
       />
-      <p class="endH1">&lt;/h1&gt;</p>
+      <Transition appear>
+        <p style="margin-left: auto">&lt;/h1&gt;</p>
+      </Transition>
     </div>
   </main>
 </template>
 
 <style scoped>
 main {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
   width: 100%;
-  height: 100%;
 }
 .writerWrapper {
   display: flex;
@@ -46,30 +61,25 @@ main {
   justify-content: center;
 }
 .is-typed {
-  font-weight: 200;
+  font-family: 'Alfa Slab One', cursive;
   font-size: 2.7rem;
+  font-weight: 200;
+  letter-spacing: 1px;
   line-height: 95%;
-  font-family: "Alfa Slab One", cursive;
-  text-shadow: 6px 6px 2px rgb(0, 0, 0), 7px 7px 2px rgb(223, 212, 212);
   position: relative;
+  text-shadow: 5px 5px 2px rgb(0, 0, 0), 7px 7px 4px rgb(223, 212, 212);
 }
 p {
-  font-size: 0.7rem;
-  font-family: "Pacifico", cursive;
-  opacity: 0.5;
-}
-.startH1 {
-  margin-right: auto;
-}
-.endH1 {
-  margin-left: auto;
+  font-size: 1rem;
+  font-family: 'Pacifico', cursive;
+  opacity: 0.7;
 }
 @media (min-width: 600px) {
   .is-typed {
     font-size: 4rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 @media (min-width: 900px) {
@@ -88,12 +98,21 @@ p {
     font-size: 3rem;
   }
 }
-@media (min-width: 1720px) {
+@media (min-width: 1700px) {
   .is-typed {
     font-size: 8rem;
   }
   p {
     font-size: 4rem;
   }
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease 3.5s;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

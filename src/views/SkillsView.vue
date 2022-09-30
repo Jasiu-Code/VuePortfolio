@@ -1,7 +1,11 @@
 <script setup>
-import SkillsModal from "../components/SkillsModal.vue";
-import { reactive, ref } from "vue";
-import axios from "axios";
+import SkillsModal from '../components/SkillsModal.vue';
+import { reactive, ref } from 'vue';
+import axios from 'axios';
+const space_id = import.meta.env.VITE_SPACE_ID;
+const environment_id = import.meta.env.VITE_ENVIRONMENT;
+const access_token = import.meta.env.VITE_ACCESS_TOKEN;
+
 const state = reactive({
   currentName: null,
   showModal: false,
@@ -20,9 +24,6 @@ function showItem(itemData) {
   state.currentDescription = itemData.description;
   state.currentLink = itemData.link;
 }
-const space_id = import.meta.env.VITE_SPACE_ID;
-const environment_id = import.meta.env.VITE_ENVIRONMENT;
-const access_token = import.meta.env.VITE_ACCESS_TOKEN;
 
 const entries = axios.get(
   `https://cdn.contentful.com/spaces/${space_id}/environments/${environment_id}/entries?access_token=${access_token}`
@@ -43,7 +44,7 @@ axios
         for (let j = 0; j < responseAssets.length; j++) {
           responseEntries[i].title.toUpperCase() ==
           responseAssets[j].title.toUpperCase()
-            ? (responseEntries[i].url = "https:" + responseAssets[j].file.url)
+            ? (responseEntries[i].url = 'https:' + responseAssets[j].file.url)
             : null;
         }
       }
@@ -58,8 +59,8 @@ function openNewPage(link) {
 </script>
 
 <template>
-  <div class="skillsContainer">
-    <div class="skill" v-for="skill in skills" :key="skill.title">
+  <div class="skillsWrapper">
+    <div class="skillWrapper" v-for="skill in skills" :key="skill.title">
       <h2 @click="showItem(skill)">
         {{ skill.title.toUpperCase() }}
       </h2>
@@ -91,12 +92,38 @@ function openNewPage(link) {
       :description="state.currentDescription"
       :link="state.currentLink"
       v-show="state.showModal"
-      @close-modal="state.showModal = false"
+      @closeModal="state.showModal = false"
+      @openLink="openNewPage(state.currentLink)"
     />
   </div>
 </template>
 
 <style>
+.skillsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.skillWrapper {
+  animation: dropCard 0.6s ease 0s;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  position: relative;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow: 3px 3px 1px rgb(0, 0, 0), 4px 4px 1px rgb(223, 212, 212);
+}
+.skillWrapper:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  cursor: pointer;
+  color: var(--white);
+}
+
 .iconContainer {
   width: 25px;
   position: absolute;
@@ -104,41 +131,18 @@ function openNewPage(link) {
   right: 3px;
 }
 .iconContainer:hover {
-  color: red;
+  color: var(--red);
 }
-.skillsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-.skill {
-  animation: dropCard 0.6s ease 0s;
-  background: rgba(0, 0, 0, 0.7);
 
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 18px;
-  position: relative;
-  font-family: "Alfa Slab One", cursive;
-  text-shadow: 3px 3px 1px rgb(0, 0, 0), 4px 4px 2px rgb(223, 212, 212);
-  /* border: 3px solid var(--yellow); */
-}
-@media (min-width: 600px) {
-  .skill {
+@media (min-width: 900px) {
+  .skillWrapper {
     font-size: 24px;
   }
-  .skillsContainer {
+  .skillsWrapper {
     gap: 25px;
   }
 }
-.skill:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease;
-  cursor: pointer;
-  color: var(--yellow);
-}
+
 @keyframes dropCard {
   0% {
     transform: rotateX(-90deg);
