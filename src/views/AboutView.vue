@@ -9,6 +9,10 @@
         <br />
         Currently looking for a job where I could improve my skills and learn
         new things.
+        <br />
+        <a href="https://github.com/Jasiu-Code " target="_blank">
+          Checkout my github
+        </a>
       </h1>
       <img src="../assets/foto.png" alt="" />
     </div>
@@ -27,6 +31,16 @@ h1 {
   border-radius: 20px;
   padding: 10px;
   font-size: 18px;
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  border-bottom: 4px solid var(--green);
+  cursor: pointer;
+}
+a:hover {
+  color: var(--green);
 }
 
 img {
