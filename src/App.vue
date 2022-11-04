@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
@@ -32,7 +32,7 @@ import { RouterLink, RouterView } from 'vue-router';
 .mainWrapper {
   align-items: center;
   background: black;
-  background-image: url('assets/bg.jpeg');
+  background-image: url("assets/bg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -46,7 +46,7 @@ import { RouterLink, RouterView } from 'vue-router';
   border-bottom: 7px solid var(--white);
   border-radius: 70px;
   color: var(--white);
-  font-family: 'Alfa Slab One', cursive;
+  font-family: "Alfa Slab One", cursive;
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 2px;

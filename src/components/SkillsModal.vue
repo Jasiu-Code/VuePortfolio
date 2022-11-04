@@ -48,7 +48,7 @@ const props = defineProps({
 <style scoped>
 .modalOverlay {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--yellow);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -93,6 +93,7 @@ img {
 }
 ul {
   margin-top: auto;
+  margin-bottom: auto;
   list-style: none;
   text-align: left;
 }
@@ -123,7 +124,7 @@ button {
   background: none;
   border: 1px solid black;
   font-weight: bold;
-  font-family: 'Alfa Slab One', cursive;
+  font-family: "Alfa Slab One", cursive;
   font-size: 16px;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
   letter-spacing: 1px;
